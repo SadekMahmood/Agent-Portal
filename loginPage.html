@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .login-container {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-box {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 450px;
+            width: 100%;
+        }
+        .login-image {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        footer {
+            text-align: center;
+            background-color: #f1f1f1;
+            padding: 20px 0;
+        }
+        footer .social-icons a {
+            margin: 0 10px;
+            font-size: 1.2rem;
+            color: #6c757d;
+            transition: color 0.3s;
+        }
+        footer .social-icons a:hover {
+            color: #007bff;
+        }
+        /* Additional Styling for Image and Form */
+        .login-wrapper {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .student-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">EduConnect</h5>
+            <div>
+                <a href="#" class="text-primary me-3"><i class="fas fa-question-circle"></i> Help</a>
+                <button class="btn btn-primary">New Application</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Page -->
+    <div class="container-fluid login-container">
+        <div class="row align-items-center w-100 login-wrapper">
+            <!-- Login Form Section -->
+            <div class="col-md-6">
+                <div class="login-box">
+                    <h3 class="mb-3">Student Recruitment Portal</h3>
+                    <p class="text-muted">Sign in to access your account and manage student applications.</p>
+                    <div class="mb-4">
+                        <button class="btn btn-primary me-2"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+                        <button class="btn btn-outline-primary"><i class="fas fa-user-plus"></i> Register</button>
+                    </div>
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <a href="#" class="text-primary"><i class="fas fa-key"></i> Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100"><i class="fas fa-arrow-right"></i> Login</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Image Section -->
+            <div class="col-md-6 student-image">
+                <img src="https://github.com/SadekMahmood/Student_Recruitmrnt_Portal/blob/main/vasily-koloda-8CqDvPuo_kI-unsplash.jpg" >
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 EduConnect. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Form Validation
+            $('#loginForm').on('submit', function(e) {
+                e.preventDefault();
+                const email = $('#email').val();
+                const password = $('#password').val();
+
+                if (!email || !password) {
+                    alert('Please fill out all fields.');
+                    return false;
+                }
+
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return false;
+                }
+
+                alert('Login successful!');
+                // Add further actions here (e.g., send data to server)
+            });
+        });
+    </script>
+</body>
+</html>
