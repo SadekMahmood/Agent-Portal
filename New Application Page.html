@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .nav-item a {
+            color: #6c757d;
+            font-weight: 500;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item a i {
+            margin-right: 5px;
+        }
+
+        .nav-item a:hover {
+            color: #000;
+        }
+
+        .card {
+            border-radius: 15px;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        .btn-primary, .btn-secondary {
+            border-radius: 8px;
+        }
+
+        .custom-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .recommended-universities .card {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#">EduConnect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-user-graduate"></i> Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-university"></i> Universities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-file-alt"></i> Applications</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-primary me-3">Help</button>
+                    <button class="btn btn-secondary">New Application</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="#">Students</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New Application</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container my-5">
+        <!-- Student Information -->
+        <div class="custom-card mb-4">
+            <h5 class="mb-3">Student Information</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="First Name">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Phone">
+                </div>
+                <div class="col-md-6">
+                    <select class="form-select">
+                        <option selected>Country of Origin</option>
+                        <option value="1">USA</option>
+                        <option value="2">Canada</option>
+                        <option value="3">Australia</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input type="date" class="form-control" placeholder="Date of Birth">
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Documents -->
+        <div class="custom-card mb-4">
+            <h5 class="mb-3">Academic Documents</h5>
+            <ul class="nav nav-tabs mb-3">
+                <li class="nav-item">
+                    <button class="nav-link active">High School</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link">Undergraduate</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link">Graduate</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link">Language Tests</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link">Other</button>
+                </li>
+            </ul>
+            <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <i class="fas fa-file-alt icon"></i>
+                        <span>High School Transcript</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-sm">Upload</button>
+                        <button class="btn btn-secondary btn-sm">View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <i class="fas fa-file-alt icon"></i>
+                        <span>Standardized Tests</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-sm">Upload</button>
+                        <button class="btn btn-secondary btn-sm">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- University Selection -->
+        <div class="custom-card mb-4">
+            <h5 class="mb-3">University Selection</h5>
+            <input type="text" class="form-control mb-3" placeholder="Search Universities">
+
+            <h6>Selected Universities</h6>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>University</th>
+                        <th>Country</th>
+                        <th>Program</th>
+                        <th>Term</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>University of Toronto</td>
+                        <td>Canada</td>
+                        <td>Computer Science</td>
+                        <td>Fall 2023</td>
+                        <td><i class="fas fa-trash-alt icon"></i></td>
+                    </tr>
+                    <tr>
+                        <td>University of Melbourne</td>
+                        <td>Australia</td>
+                        <td>Business Administration</td>
+                        <td>Fall 2023</td>
+                        <td><i class="fas fa-trash-alt icon"></i></td>
+                    </tr>
+                    <tr>
+                        <td>University of Manchester</td>
+                        <td>UK</td>
+                        <td>Engineering</td>
+                        <td>Fall 2023</td>
+                        <td><i class="fas fa-trash-alt icon"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h6>Recommended Universities</h6>
+            <div class="row recommended-universities">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h6>MIT</h6>
+                        <p>United States</p>
+                        <p>Computer Science, Engineering</p>
+                        <button class="btn btn-primary btn-sm">Add</button>
+                        <button class="btn btn-secondary btn-sm">Details</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h6>Oxford University</h6>
+                        <p>United Kingdom</p>
+                        <p>Business, Law, Economics</p>
+                        <button class="btn btn-primary btn-sm">Add</button>
+                        <button class="btn btn-secondary btn-sm">Details</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h6>University of Sydney</h6>
+                        <p>Australia</p>
+                        <p>Medicine, Science, Arts</p>
+                        <button class="btn btn-primary btn-sm">Add</button>
+                        <button class="btn btn-secondary btn-sm">Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-secondary me-2">Save as Draft</button>
+            <button class="btn btn-primary me-2">Generate PDF</button>
+            <button class="btn btn-success">Submit Application</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
